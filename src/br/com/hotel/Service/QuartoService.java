@@ -49,8 +49,8 @@ public class QuartoService extends AbstractService<Quarto, QuartoDAO>{
     }
     
     @Override
-    public List<Quarto> listarCriteria(String nome, String like){
-        return super.listarCriteria(nome, like);
+    public List<Quarto> listarCriteria(String campo, String like){
+        return super.listarCriteria(campo, like);
     }
     
     

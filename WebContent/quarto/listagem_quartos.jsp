@@ -10,6 +10,7 @@
 	<style type="text/css">
 		<%@ include file="/assets/css/bootstrap.css" %>
 	  	<%@ include file="/assets/css/estilo.css" %>
+	  	
 		a{
 			text-decoration: none;
 		}
@@ -67,20 +68,22 @@
 	<br/>
 	
 	<!-- PESQUISA -->
-	<table>
-		<tr>
-			<td><input class="form-control" type="text" name="pesquisa" placeholder="Nome" /></td>
-			<td>
-				<select class="form-control" name="categoria" required="required">
-					<option value="" label="-- Selecione --"></option>
-					<option value="Simples" label="Simples"></option>
-					<option value="Duplo" label="Duplo"></option>
-					<option value="Triplo" label="Triplo"></option>
-				</select>
-			</td>
-			<td><input class="btn btn-default" type="submit" name="pesquisar" value="Pesquisar"/></td>
-		</tr>
-	</table>
+	<form action="pesquisar_quarto" method="GET">
+		<table>
+			<tr>
+				<td><input class="form-control" type="text" name="numero" placeholder="Número" /></td>
+				<td>
+					<select class="form-control" name="categoria">
+						<option value="" label="-- Selecione --"></option>
+						<option value="Simples" label="Simples"></option>
+						<option value="Duplo" label="Duplo"></option>
+						<option value="Triplo" label="Triplo"></option>
+					</select>
+				</td>
+				<td><input class="btn btn-default" type="submit" value="Pesquisar"/></td>
+			</tr>
+		</table>
+	</form>
 	<br/>
 	
 	<!-- CADASTRAR NOVO -->

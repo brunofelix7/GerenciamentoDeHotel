@@ -59,7 +59,7 @@ public abstract class AbstractDAO<T extends AbstractEntity> {
     }
     
     @SuppressWarnings("unchecked")
-	public List<T> listarCriteria(String nome, String like){
+	public List<T> listarCriteria(String campo, String like){
     	Criteria criteria = getSession().createCriteria(entityClass());
     	//	SEJA IGUAL
     	//	criteria.add(Restrictions.eq(nome, like));
@@ -71,7 +71,7 @@ public abstract class AbstractDAO<T extends AbstractEntity> {
     	criteria.add(exp);
     	*/
     	//	CONTENHA ALGUMA LETRA DIGITADA
-    	criteria.add(Restrictions.like(nome, "%" + like + "%"));
+    	criteria.add(Restrictions.like(campo, like + "%"));
     	List<T> lista = criteria.list();
     	return lista;
     }

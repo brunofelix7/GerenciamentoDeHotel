@@ -78,9 +78,9 @@ public abstract class AbstractService<T extends AbstractEntity, D extends Abstra
         return newDAO(manager).listar();
     }
     
-    public List<T> listarCriteria(String nome, String like){
+    public List<T> listarCriteria(String campo, String like){
     	manager = fac.createEntityManager();
-        return newDAO(manager).listarCriteria(nome, like);
+        return newDAO(manager).listarCriteria(campo, like);
     }
 
 }
