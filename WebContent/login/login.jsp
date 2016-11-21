@@ -20,9 +20,9 @@
 	<%
 		if(request.getParameter("msg") != null){
 			if(request.getParameter("msg").equals("erro_login")){
-				out.println("<i style='color:red;'>Usuário/Senha inválidos</i>");
+				out.println("<div class='alert alert-danger' role='alert'>Usuário e/ou Senha inválidos</div>");
 			}if(request.getParameter("msg").equals("erro")){
-				out.println("<i style='color:red;'>Por favor, preencha todos os campos</i>");
+				out.println("<div class='alert alert-warning' role='alert'>Por favor, preencha todos os campos</div>");
 			}		
 		}
 	%>
@@ -35,7 +35,7 @@
 				HttpSession sessao = request.getSession();
 				sessao.removeAttribute("login");
 				//	sessao.invalidate(); Remove todas as variáveis de sessões
-				out.println("<span style='color:green;'>Deslogado com sucesso!</span>");
+				out.println("<div class='alert alert-success' role='alert'>Deslogado com sucesso</div>");
 			}
 		}
 	%>
@@ -55,7 +55,7 @@
 				<td><input class="form-control" type="password" name="senha"/></td>
 			</tr>
 			<tr class="a">
-				<td><input class="btn btn-info" type="submit" value="Entrar"/></td>
+				<td><input class="btn btn-primary" type="submit" value="Entrar"/></td>
 			</tr>
 		</table>
 	</form>

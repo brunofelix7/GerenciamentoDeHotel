@@ -7,10 +7,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Listagem de Quartos</title>
+	<link rel="stylesheet" href="/assets/css/estilo.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 	<style type="text/css">
-		<%@ include file="/assets/css/bootstrap.css" %>
-	  	<%@ include file="/assets/css/estilo.css" %>
-	  	
+		body{
+			margin: 20px;
+		}
 		a{
 			text-decoration: none;
 		}
@@ -37,34 +39,16 @@
 	<hr/>
 
 	<!-- MENU -->
-	<table width="50%">
-		<tr>
-			<td>
-				<div class="btn-group btn-group-justified" role="group" aria-label="...">
-				<div class="btn-group" role="group">
-					<a href="#" class="btn btn-primary">Categorias</a>
-				</div>
-				<div class="btn-group" role="group">
-					<a href="listagem_quartos" class="btn btn-primary">Quartos</a>
-				</div>
-				<div class="btn-group" role="group">
-				    <a href="listagem_hospedes" class="btn btn-primary">Hospedes</a>
-				</div>
-				<div class="btn-group" role="group">
-				    <a href="listagem_reservas" class="btn btn-primary">Reservas</a>
-				</div>
-				<div class="btn-group" role="group">
-				    <a href="#" class="btn btn-primary">Disponibilidade</a>
-				</div>
-				<td>
-					<div class="btn-group" role="group">
-					    <a href="login?msg=logoff" class="btn btn-danger">Logout</a>
-					</div>
-				</td>
-				</div>
-			</td>
-		</tr>
-	</table>
+	<ul class="nav nav-pills">
+		<li role="presentation" class="active"><a href="/">Home</a></li>
+		<li role="presentation"><a href="#">Categorias</a></li>
+		<li role="presentation"><a href="listagem_quartos">Quartos</a></li>
+		<li role="presentation"><a href="listagem_hospedes">Hospedes</a></li>
+		<li role="presentation"><a href="listagem_reservas">Reservas</a></li>
+		<li role="presentation"><a href="#">Disponibilidade</a></li>
+		<li role="presentation" class="active"><a href="login?msg=logoff">Logout</a></li>
+	</ul>
+	<br/>
 	<br/>
 	
 	<!-- PESQUISA -->
@@ -85,9 +69,9 @@
 		</table>
 	</form>
 	<br/>
-	
+
 	<!-- CADASTRAR NOVO -->
-	<a href='novo_quarto' class="btn btn-success">Novo</span></a>
+	<a href='novo_quarto' class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Cadastrar</span></a>
 	<br/><br/>
 
 	<!-- LISTAGEM -->
@@ -98,8 +82,6 @@
 				<td><b>Número</b></td>
 				<td><b>Andar</b></td>
 				<td><b>Categoria</b></td>
-				<td><b>Editar</b></td>
-				<td><b>Remover</b></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -113,13 +95,16 @@
 					<td><%= q.getNumero() %></td>
 					<td><%= q.getAndar() %></td>
 					<td><%= q.getCategoria().getNome() %></td>
-					<td><a class="btn btn-warning" href="editar_quarto?id=<%= q.getId() %>">Editar</a></td>
-					<td><a class="btn btn-danger" href="#" onclick="apagar('<%= q.getId() %>')">Excluir</a></td>
+					<td><a class="btn btn-primary" href="editar_quarto?id=<%= q.getId() %>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+					<td><a class="btn btn-danger" href="#" onclick="apagar('<%= q.getId() %>')"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
 				</tr>
 			<%		
 				}
 			%>
 		</tbody>
 	</table>
+<!-- jQuery / Bootstrap js-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script></body>
 </body>
 </html>
