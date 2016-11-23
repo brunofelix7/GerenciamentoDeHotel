@@ -25,3 +25,4 @@ Sistema web desenvolvido no 4º período para as disciplinas de Programação Av
 ###### 3. Executar arquivo "Script SQL"
 ###### 4. Clicar com o botao direito no projeto -> Run as -> Run on Server
 ###### 5. Login "admin" e Senha "admin"
+
