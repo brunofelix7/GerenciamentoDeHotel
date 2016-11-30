@@ -16,49 +16,53 @@
 		Hospede hospede = (Hospede) request.getAttribute("hospede");
 	%>
 	
-	<h1>Cadastro de Hospede - Detalhes</h1>
-	<br/>
+	<h1>Registro de Hospede - Detalhes</h1>
+	<hr/>
 	
-	<table class="table">
+	<div>
+		<figure>
+			<img style="width: 10%; height: 10%;" src="assets/image/User.png" alt="user"/>
+			<figcaption><h3><%= hospede.getNome()%></h3></figcaption>
+			<hr/>
+		</figure>
+	</div>
+
+	<table>
 		<tr>
-			<td><b>Código: </b></td>
-			<td><%= hospede.getId()%></td>
+			<td style="padding-bottom: 10px;"><b>Código: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getId()%></td>
 		</tr>
 		<tr>
-			<td><b>Nome: </b></td>
-			<td><%= hospede.getNome()%></td>
+			<td style="padding-bottom: 10px;"><b>CPF: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getCpf()%></td>
 		</tr>
 		<tr>
-			<td><b>CPF: </b></td>
-			<td><%= hospede.getCpf()%></td>
+			<td style="padding-bottom: 10px;"><b>Email: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getEmail()%></td>
 		</tr>
 		<tr>
-			<td><b>Email: </b></td>
-			<td><%= hospede.getEmail()%></td>
+			<td style="padding-bottom: 10px;"><b>Telefone: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getTelefone()%></td>
 		</tr>
 		<tr>
-			<td><b>Telefone: </b></td>
-			<td><%= hospede.getTelefone()%></td>
+			<td style="padding-bottom: 10px;"><b>Rua: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getEndereco().getLogradouro()%></td>
 		</tr>
 		<tr>
-			<td><b>Rua: </b></td>
-			<td><%= hospede.getEndereco().getLogradouro()%></td>
+			<td style="padding-bottom: 10px;"><b>Número: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getEndereco().getNumero()%></td>
 		</tr>
 		<tr>
-			<td><b>Número: </b></td>
-			<td><%= hospede.getEndereco().getNumero()%></td>
+			<td style="padding-bottom: 10px;"><b>Bairro: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getEndereco().getBairro()%></td>
 		</tr>
 		<tr>
-			<td><b>Bairro: </b></td>
-			<td><%= hospede.getEndereco().getBairro()%></td>
+			<td style="padding-bottom: 5px;"><b>Cidade: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getEndereco().getCidade()%></td>
 		</tr>
 		<tr>
-			<td><b>Cidade: </b></td>
-			<td><%= hospede.getEndereco().getCidade()%></td>
-		</tr>
-		<tr>
-			<td><b>CEP: </b></td>
-			<td><%= hospede.getEndereco().getCep()%></td>
+			<td style="padding-bottom: 10px;"><b>CEP: </b></td>
+			<td style="padding-left: 10px; padding-bottom: 10px;"><%= hospede.getEndereco().getCep()%></td>
 		</tr>
 	</table>
 	<br/>

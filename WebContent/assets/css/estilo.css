@@ -1,3 +1,7 @@
 body{
 	margin: 20px;
 }
+
+.table-striped>thead>tr>th, .table-striped>tbody>tr>th, .table-striped>tfoot>tr>th, .table-striped>thead>tr>td, .table-striped>tbody>tr>td, .table-striped>tfoot>tr>td{
+    padding: 5px;
+}

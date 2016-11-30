@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Atualizar Hospede</title>
+<title>Atualizar registro de hospede</title>
 <style type="text/css">
 	<%@ include file="/assets/css/bootstrap.css" %>
   	<%@ include file="/assets/css/estilo.css" %>
@@ -23,7 +23,7 @@
 		Hospede hospede = (Hospede) request.getAttribute("hospede");
 	%>
 
-	<h1>Editar Hospede</h1>
+	<h1>Atualizar registro</h1>
 	<hr/>
 	<form method="POST" action="editar_hospede">
 		<table>

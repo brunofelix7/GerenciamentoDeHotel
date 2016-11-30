@@ -3,7 +3,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Cadastro de Hospede</title>
+	<title>Cadastrar novo hospede</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.1.1/sweetalert2.min.css"/>
 	<style type="text/css">
 		<%@ include file="/assets/css/bootstrap.css" %>
 	  	<%@ include file="/assets/css/estilo.css" %>
@@ -15,11 +16,20 @@
 			padding-right: 1em;
 		}
 	</style>
+	<script>
+		function cadastrar(){
+			swal(
+			  'Sucesso!',
+			  'Registro salvo com sucesso.',
+			  'success'
+			)
+		}
+	</script>
 </head>
 <body>
 	<h1>Cadastrar Hospede</h1>
 	<hr/>
-	<form method="POST" action="novo_hospede">
+	<form method="POST" action="novo_hospede" onsubmit="cadastrar()">
 		<table>
 			<tr>
 				<td><label for="usr">Nome: </label></td>
@@ -60,5 +70,6 @@
 			</tr>
 		</table>
 	</form>
+<script src="https://cdn.jsdelivr.net/sweetalert2/6.1.1/sweetalert2.min.js"></script>
 </body>
 </html>
