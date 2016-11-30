@@ -8,10 +8,33 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Listagem de Hospedes</title>
-	<link rel="stylesheet" href="assets/css/estilo.css"/>
+	
+	<!-- jQuery -->
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    
+    <!-- Bootstrap 3.3.7 (JavaScript) -->
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+	<!-- Bootstrap 3.3.7 (CSS) -->
 	<link rel="stylesheet" href="assets/css/bootstrap.css"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="assets/css/main.css"/>
+	
+	<!-- Modernizr -->
+    <script src="assets/js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" /> 
+    <link rel="stylesheet" href="assets/css/jquery-ui.theme.min.css" />
+    <script src="assets/js/jquery-ui.min.js"></script>
+    
+    <!-- SweetAlert2 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.1.1/sweetalert2.min.css"/>
+	
+	<!-- Outros -->
+	<link rel="stylesheet" href="assets/css/estilo.css"/>
+	
 	<style type="text/css">
 		body{
 			margin: 20px;
@@ -92,7 +115,7 @@
 	<br/><br/>
 
 	<!-- LISTAGEM -->
-	<table class="table-striped" width="100%">
+	<table class="table table-hover table-bordered table-striped table-condensed" width="100%">
 		<thead bgcolor="#263238">
 			<tr>
 				<td><b style="color: #ffffff;">#</b></td>
@@ -115,11 +138,12 @@
 					<td><%= h.getCpf() %></td>
 					<td><%= h.getEmail() %></td>
 					<td><%= h.getTelefone() %></td>
+					
 					<td>
 						<div class="btn-group" role="group" aria-label="...">
-							<a style="border-radius: 0px; background-color: #455A64; border: 0px;" class="btn btn-primary" href="editar_hospede?id=<%= h.getId() %>"><span class="glyphicon glyphicon-pencil"></span></a>
-							<a style="border-radius: 0px; background-color: #455A64; border: 0px;" class="btn btn-primary" href="visualizar_hospede?id=<%= h.getId() %>"><span class="glyphicon glyphicon-eye-open"></span></a>
-							<a style="border-radius: 0px; background-color: #F44336; border: 0px;" class="btn btn-danger" href="#" onclick="apagar('<%= h.getId() %>')"><span class="glyphicon glyphicon-remove-sign"></span></a>
+							<a class="btn btn-sm btn-primary" href="visualizar_hospede?id=<%= h.getId() %>"><span class="glyphicon glyphicon-search"></span></a>
+							<a class="btn btn-sm btn-primary" href="editar_hospede?id=<%= h.getId() %>"><span class="glyphicon glyphicon-pencil"></span></a>
+							<a class="btn btn-sm btn-danger" href="#" onclick="apagar('<%= h.getId() %>')"><span class="glyphicon glyphicon-remove"></span></a>
 						</div>
 					</td>
 				</tr>
@@ -128,9 +152,8 @@
 			%>
 		</tbody>
 	</table>
-<!-- jQuery / Bootstrap JavaScript-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- SeetAlert2 -->
 <script src="https://cdn.jsdelivr.net/sweetalert2/6.1.1/sweetalert2.min.js"></script>
 </body>
 </html>
